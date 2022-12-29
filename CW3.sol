@@ -104,7 +104,7 @@ contract Custom_token
         selfdestruct(owner);
     }
     fallback() external payable {
-        // Do nothing, just accept the Ether
+        // Do nothing, just accept the Ethers
     }
 
 }

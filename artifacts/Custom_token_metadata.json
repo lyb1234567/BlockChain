@@ -251,10 +251,10 @@
 	},
 	"sources": {
 		"CW3.sol": {
-			"keccak256": "0x1635fbbac5b033d2832a88ab91d5e1f4edbe0935ddc772f57b5eba809873d1c5",
+			"keccak256": "0x67abddfa7566f9f5ddebb85a90aee4a27082943dd7fb35c1d14cf5cb484375ad",
 			"urls": [
-				"bzz-raw://f36ff5ae58a8041918b128ac67b9bcf695b5b248ab9af3cfb199f8105f27f0a8",
-				"dweb:/ipfs/QmR8SkkHTjA54pV8KqEXN9qLhynmMkyjY27PysDhKMX2Q3"
+				"bzz-raw://3dc794f1931a3a290f0c4737d209c115c98f6e2ebb0b0d7f9198afaaf8edc1a5",
+				"dweb:/ipfs/QmdyR8A4bCN8wiY1KtpXiSUPxQhmQvnRSsRBzCLeqzmSEp"
 			]
 		}
 	},
