@@ -1,6 +1,8 @@
 pragma solidity >=0.7.0 <0.9.0;
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 contract Custom_token
 {
+    using SafeMath for uint256;
     address payable private owner;
     string  name;
     string  symbol;
@@ -11,6 +13,7 @@ contract Custom_token
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Mint(address indexed to, uint256 value);
     event Sell(address indexed from, uint256 value);
+    
     
     constructor() public {
         // Set token metadata
@@ -49,11 +52,11 @@ contract Custom_token
 
     function transfer(address to, uint256 value) public returns (bool) {
         // Ensure caller has sufficient balance
-        require(balances[msg.sender] >= value, "You do not have sufficient balance");
+        require(balances[msg.sender].sub(value) >= 0, "You do not have sufficient balance");
 
         // Transfer tokens and update balances
-        balances[msg.sender] = balances[msg.sender] - value;
-        balances[to] = balances[to] + value;
+        balances[msg.sender] = balances[msg.sender].sub(value);
+        balances[to] = balances[to].add(value);
 
         // Emit event and return success
         emit Transfer(msg.sender, to, value);
@@ -65,7 +68,7 @@ contract Custom_token
         require(roles[msg.sender] == true, "Only the owner can mint new tokens");
         totalsupply = totalsupply + value;
         balances[to] =  balances[ to ] + value;
-        emit Mint ( to , value);
+        emit Mint ( to , value); 
         return true;
     }
 
@@ -76,17 +79,20 @@ contract Custom_token
     }
     function sell(uint256 value) public payable returns (bool)
     {
-        require(balances[msg.sender] >= value, "Insufficient balance");
+        require(balances[msg.sender].sub(value)>=0, "Insufficient balance");
 
         // Calculate the amount of wei to be received for the sale
         uint256 weiAmount = value * 600; // 600 wei per token
 
         // Transfer the wei to the seller and update their balance
+        
+        // Check that the contract has a sufficient balance before calling the transfer function to avoid the reentrancy attack.
+        require(address(this).balance.sub(weiAmount)>=0, "Contract balance is insufficient");
         payable(msg.sender).transfer(weiAmount);
-        balances[msg.sender] -= value;
+        balances[msg.sender] = balances[msg.sender].sub(value);
 
         // Update the total supply of tokens
-        totalsupply -= value;
+        totalsupply = totalsupply.sub(value);
 
         // Emit the Sell event to log the sale of tokens
         emit Sell(msg.sender, value);

@@ -250,11 +250,19 @@
 		"remappings": []
 	},
 	"sources": {
-		"CW3.sol": {
-			"keccak256": "0x67abddfa7566f9f5ddebb85a90aee4a27082943dd7fb35c1d14cf5cb484375ad",
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://3dc794f1931a3a290f0c4737d209c115c98f6e2ebb0b0d7f9198afaaf8edc1a5",
-				"dweb:/ipfs/QmdyR8A4bCN8wiY1KtpXiSUPxQhmQvnRSsRBzCLeqzmSEp"
+				"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65",
+				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
+			]
+		},
+		"CW3.sol": {
+			"keccak256": "0xde48d8af67cfe23d869efdbe559ce09bcf65223e8217c19bc700eed8150a4f97",
+			"urls": [
+				"bzz-raw://67e99108e72c61d0ae93af7d64bf1d91418304f04d1c0aa6b60c2770776654af",
+				"dweb:/ipfs/QmSivgGNA5Jh7V8ReYE2nbXj1p1tYHZ5obC5MSP62Jzz7c"
 			]
 		}
 	},
