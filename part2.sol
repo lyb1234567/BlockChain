@@ -73,6 +73,8 @@ contract Part2_token
         return true;
     }
 
+    
+
     // Check the current amount of tokens of owner.
     function balanceOf(address _account) public view returns (uint256)
     {
