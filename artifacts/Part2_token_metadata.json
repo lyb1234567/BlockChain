@@ -236,7 +236,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"part2.sol": "Custom_token"
+			"part2.sol": "Part2_token"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -267,10 +267,10 @@
 			]
 		},
 		"part2.sol": {
-			"keccak256": "0xe8b86e37c40bec25aff27311e9ad9ac217f6fe71efba3cda010d0f3de43ac4ef",
+			"keccak256": "0x37f6a2981fd4a0b9b794c1e5f7cd86346da661dafa30f58689f82452bdbdb06f",
 			"urls": [
-				"bzz-raw://543fd6d1202fd34ec4a59cfffd940c2d5199be00c1bc8310c76ba349f2d51cb6",
-				"dweb:/ipfs/Qmbx8NTZAZu3PBoksJRWnPLnWKEJG3r8GAWxNYCconjM24"
+				"bzz-raw://80c0d18f9bfdc7035d946b8e42b9d498896c173e09cb38da401c2c7368d31370",
+				"dweb:/ipfs/QmfE1FTerP8455kX44jMwWgxvKijnb75Dt1m3U3DzCNg5A"
 			]
 		}
 	},

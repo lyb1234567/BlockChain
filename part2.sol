@@ -1,6 +1,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-contract Part1_token
+import "Library.sol";
+contract Part2_token
 {
     using SafeMath for uint256;
     address payable private owner;
@@ -88,7 +89,9 @@ contract Part1_token
         
         // Check that the contract has a sufficient balance before calling the transfer function to avoid the reentrancy attack.
         require(address(this).balance.sub(weiAmount)>=0, "Contract balance is insufficient");
-        payable(msg.sender).transfer(weiAmount);
+
+        bool succ = customLib.customSend(weiAmount, msg.sender);
+        require(succ,"Unsuccessful Send");
         balances[msg.sender] = balances[msg.sender].sub(value);
 
         // Update the total supply of tokens
@@ -106,7 +109,9 @@ contract Part1_token
         require(roles[msg.sender] == true, "Only the owner can destroy the contract");
 
         // Transfer contract balance to owner and destroy contract
-        owner.transfer(address(this).balance);
+        
+        bool success= customLib.customSend(address(this).balance,owner);
+        require(success,"Unsuccessful close");
         selfdestruct(owner);
     }
     fallback() external payable {
@@ -114,3 +119,4 @@ contract Part1_token
     }
 
 }
+
