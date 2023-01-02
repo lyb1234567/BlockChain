@@ -29,7 +29,7 @@ contract Part1_token
         balances[owner] = totalsupply;
         emit Mint(owner, totalsupply);
     }
-
+    
     function totalSupply() public view returns(uint256)
     {
           return totalsupply;
@@ -96,7 +96,6 @@ contract Part1_token
 
         // Emit the Sell event to log the sale of tokens
         emit Sell(msg.sender, value);
-
         // Return success
         return true;
     }
@@ -112,5 +111,4 @@ contract Part1_token
     fallback() external payable {
         // Do nothing, just accept the Ethers
     }
-
 }

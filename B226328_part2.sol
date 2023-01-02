@@ -15,7 +15,7 @@ contract Part2_token
     event Mint(address indexed to, uint256 value);
     event Sell(address indexed from, uint256 value);
     
-    
+
     constructor() public {
         // Set token metadata
         name = "Custom Token";
@@ -119,6 +119,6 @@ contract Part2_token
     fallback() external payable {
         // Do nothing, just accept the Ethers
     }
-
+    
 }
 

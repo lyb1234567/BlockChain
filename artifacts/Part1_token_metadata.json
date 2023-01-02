@@ -236,7 +236,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"CW3.sol": "Part1_token"
+			"part1.sol": "Part1_token"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -258,11 +258,11 @@
 				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
 			]
 		},
-		"CW3.sol": {
-			"keccak256": "0x51c75744b15dfcac08323cd5e6a80c05583638d1af24a4c50959b820e0b8dcbb",
+		"part1.sol": {
+			"keccak256": "0x2fff931c64eaf1f1b5728d1f3974f28520dbe654b41834cd058b66563153a858",
 			"urls": [
-				"bzz-raw://3f78549f037123fee641f579501c77304e21ca10354f12146ee69ff2b13fb544",
-				"dweb:/ipfs/QmWtHdthQdYUB7F2KsjCKAq9Y7KQWgtMWg1osHHy4RnKJN"
+				"bzz-raw://931aeaff8e2ab10c6577d28b2f2424ed60be49846811255cf30a4b3216d060b0",
+				"dweb:/ipfs/QmfSeePa44PxXgGfyJHsE5E1SDB9RszmDcQZmR2zHtGAth"
 			]
 		}
 	},
