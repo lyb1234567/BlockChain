@@ -1,6 +1,6 @@
 pragma solidity >=0.7.0 <0.9.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 // Game contract
 
@@ -94,10 +94,10 @@ contract Board {
         uint8 y;
     }
 
-struct Group {
-        Stone[] stones;
-        uint8 liberties;
-    }
+    struct Group {
+            Stone[] stones;
+            uint8 liberties;
+        }
 
     struct BoardState {
         Stone[19][19] stones;
@@ -117,7 +117,7 @@ struct Group {
         stones[x][y].y = y;
 
         // Add stone to a new group
-        groups[uint(stones[x][y])] = Group({stones[x][y]}, countLiberties(stones[x][y]));
+        groups[uint(stones[x][y])] = Group(stones[x][y], countLiberties(stones[x][y]));
 
         // Merge with adjacent groups
         Group memory group = groups[uint(stones[x][y])];
@@ -201,5 +201,7 @@ struct Group {
             a.stones.push(b.stones[i]);
         }
         delete groups[uint(b.stones[0])];
-        a.liberties = a
+        a.liberties = a ;
+    }
+}
 
