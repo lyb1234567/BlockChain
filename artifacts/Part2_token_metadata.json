@@ -259,10 +259,10 @@
 			]
 		},
 		"B226328_part2.sol": {
-			"keccak256": "0x57350f64c26b4c078ff5622475fe2b916c4a7c0998ae90a5d96b0bf6fb5b743f",
+			"keccak256": "0x2bea95b5ca84d43e89ff87eb83ae907c6456e74080e7248ffce42e05b89c5036",
 			"urls": [
-				"bzz-raw://6642298491129fa645a963d5ac12c72120999ad78b8764dd3cafacdd646f5053",
-				"dweb:/ipfs/QmUEXwu4nfSa7D5aYEQSz9R5vB9Cs5bWRRKK3gaJGaNBFW"
+				"bzz-raw://bc62dcbfab5dd4c2fa8041145f78fbed36ca63a9aa9f7adefc0586134ba43e2c",
+				"dweb:/ipfs/QmUoCj1Jp3XTmG6WENMMQTwzeEDyW1fpstk71KKWd1tA6m"
 			]
 		},
 		"Library.sol": {

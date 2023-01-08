@@ -37,7 +37,7 @@ contract Game {
         whiteSeed = seed;
         state = GameState.ACTIVE;
         startTime = now;
-        board = new Board();
+        board = new Board(); 
     }
 
     function joinGame(bytes32 seed) public {

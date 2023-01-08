@@ -66,8 +66,8 @@ contract Part1_token
     function  mint (address to, uint256 value) public returns (bool)
     {
         require(roles[msg.sender] == true, "Only the owner can mint new tokens");
-        totalsupply = totalsupply + value;
-        balances[to] =  balances[ to ] + value;
+        totalsupply = totalsupply.add(value);
+        balances[to] =  (balances[ to ]).add(value);
         emit Mint ( to , value); 
         return true;
     }
@@ -105,7 +105,7 @@ contract Part1_token
         require(roles[msg.sender] == true, "Only the owner can destroy the contract");
 
         // Transfer contract balance to owner and destroy contract
-        owner.transfer(address(this).balance);
+
         selfdestruct(owner);
     }
     fallback() external payable {

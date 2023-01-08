@@ -15,7 +15,7 @@ contract Part2_token
     event Mint(address indexed to, uint256 value);
     event Sell(address indexed from, uint256 value);
     
-
+    
     constructor() public {
         // Set token metadata
         name = "Custom Token";
@@ -67,8 +67,8 @@ contract Part2_token
     function  mint (address to, uint256 value) public returns (bool)
     {
         require(roles[msg.sender] == true, "Only the owner can mint new tokens");
-        totalsupply = totalsupply + value;
-        balances[to] =  balances[ to ] + value;
+        totalsupply = totalsupply.add(value);
+        balances[to] =  (balances[ to ]).add(value);
         emit Mint ( to , value); 
         return true;
     }
@@ -109,11 +109,7 @@ contract Part2_token
     function close() public {
         // Ensure caller is the contract owner
         require(roles[msg.sender] == true, "Only the owner can destroy the contract");
-
         // Transfer contract balance to owner and destroy contract
-        
-        bool success= customLib.customSend(address(this).balance,owner);
-        require(success,"Unsuccessful close");
         selfdestruct(owner);
     }
     fallback() external payable {
